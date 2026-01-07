@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriWaste Exchange</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="login-section" class="auth-box">
+            <h1>Login</h1>
+            <div class="input-group"><label>Username</label><input type="text" id="login-username"></div>
+            <div class="input-group"><label>Password</label><input type="password" id="login-password"></div>
+            <button onclick="login()">Login</button>
+            <span class="toggle-link" onclick="showRegister()">New here? Register</span>
+        </div>
+        <div id="register-section" class="auth-box hidden">
+            <h1>Register</h1>
+            <div class="input-group"><label>Username</label><input type="text" id="reg-username"></div>
+            <div class="input-group"><label>Password</label><input type="password" id="reg-password"></div>
+            <div class="input-group"><label>I am a:</label><select id="reg-role"><option value="farmer">Farmer (Seller)</option><option value="company">Company (Buyer)</option></select></div>
+            <button onclick="register()">Register</button>
+            <span class="toggle-link" onclick="showLogin()">Already have an account? Login</span>
+        </div>
+        <div id="dashboard-section" class="hidden">
+            <div id="dashboard-header">
+                <div><h2 id="welcome-msg">Welcome</h2><span class="role-badge" id="user-role-display"></span></div>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+            <div id="farmer-controls" class="hidden">
+                <h3>Post New Waste Product</h3>
+                <div class="input-group"><input type="text" id="prod-title" placeholder="Product Title"></div>
+                <div class="input-group"><input type="text" id="prod-img" placeholder="Image URL"></div>
+                <div class="input-group"><input type="number" id="prod-price" placeholder="Price ($)"></div>
+                <div class="input-group"><textarea id="prod-desc" rows="3" placeholder="Description..."></textarea></div>
+                <button onclick="addProduct()">Upload Listing</button>
+                <hr style="margin: 30px 0;">
+            </div>
+            <h3>Marketplace</h3>
+            <div id="product-list" class="product-grid"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
