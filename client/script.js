@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api'; 
+const API_URL = 'https://agri-waste-api.onrender.com'; 
 let token = localStorage.getItem('token');
 let currentUser = JSON.parse(localStorage.getItem('user'));
 
